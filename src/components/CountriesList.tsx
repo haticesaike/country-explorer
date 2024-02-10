@@ -1,6 +1,8 @@
 import { useQuery, gql } from '@apollo/client';
 import React from 'react';
-import ReactCountryFlag from "react-country-flag";
+import {ICountries} from "../interfaces/countries.ts";
+
+//import ReactCountryFlag from "react-country-flag";
 
 // GraphQL query to get countries
 const GET_COUNTRIES = gql`
@@ -8,7 +10,6 @@ const GET_COUNTRIES = gql`
         countries {
             code
             name
-            emoji
             capital
             currency
         }
@@ -25,17 +26,20 @@ const CountriesList: React.FC = () => {
         <div>
             <h3>List of Countries</h3>
             <ul>
-                {data.countries.map(({ code, name, capital, currency }: { code: string; name: string; capital: string; currency: string }) => (
-                    <li key={code}>
-                        <p>
-                            <ReactCountryFlag countryCode={code} svg style={{width: '2em', height: '2em'}} />
-                            <strong>{name}</strong> - Capital: {capital}, Currency: {currency}
-                        </p>
-                    </li>
-                ))}
+                {data.countries.map(({ code, name,  capital, currency }: ICountries) => {
+                   return (<li key={code}>
+
+                        <img width={20} height={20} src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${code}.png`} alt={code}/>
+                        <strong>{name}</strong> - Capital: {capital},
+                        Currency: {currency}
+
+
+                    </li>)
+                })}
             </ul>
         </div>
     );
 }
+
 
 export default CountriesList;
