@@ -4,10 +4,9 @@ import SelectItem from "./components/SelectItem";
 
 function App() {
   return (
-    <div>
-      <h2>Countries Explorer</h2>
-
-      <div className="App">
+    <div className="App">
+      <h2 className="title">Countries Explorer</h2>
+      <div className="container">
         <div className="countriesList">
           <CountriesList />
         </div>

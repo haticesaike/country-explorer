@@ -28,6 +28,15 @@ function CountriesList() {
     }
   }, [groupCriteria, countries]);
 
+  useEffect(() => {
+    if (countries.length > 0 && countries.length <= 9) {
+      const lastIndex = countries.length - 1;
+      setSelectedItem(countries[lastIndex]);
+    } else if (countries.length > 9) {
+      setSelectedItem(countries[9]);
+    }
+  }, [countries]);
+
   const groupCountries = (countries: ICountries[], criteria: string) => {
     const grouped = countries.reduce(
       (acc, country) => {
@@ -66,7 +75,7 @@ function CountriesList() {
   if (error) return <p>Error fetching countries: {error.message}</p>;
 
   return (
-    <div>
+    <div className="scroll-content">
       <h3>List of Countries</h3>
       <Search
         onSearch={handleSearch}

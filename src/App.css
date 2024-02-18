@@ -1,0 +1,36 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+.title{
+    color: var(--text-color);
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+}
+.countriesList{
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color:var(--bg-countries-color);
+
+
+}
+.selectedItem{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-select-color);
+    padding: 20px;
+
+
+}
+
