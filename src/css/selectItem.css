@@ -2,18 +2,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
-    padding: 5px 10px;
-    border: 3px solid var(--border);
-    border-radius: 3px;
-
-
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 50px;
+    height: auto;
 }
 
-.card{
 
+
+
+
+h2{
+    color: var(--text-color);
+    font-size: 20px;
+    letter-spacing: 2px;
+  ;
 
 }
 .image{
 
+}
+.info{
+    text-align: start;
 }

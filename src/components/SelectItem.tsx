@@ -17,7 +17,13 @@ function SelectItem() {
           </div>
         </div>
 
-        <h2>{selectedItem?.name}</h2>
+        <div className="info">
+          <h2>{selectedItem?.name}</h2>
+
+          <p> Capital:{selectedItem?.capital}</p>
+          <p>Currency:{selectedItem?.currency}</p>
+          <p>Continent:{selectedItem?.continent?.name}</p>
+        </div>
       </div>
     </div>
   );

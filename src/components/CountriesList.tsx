@@ -90,88 +90,92 @@ function CountriesList() {
     <div>
       <div className="top-side">
         <h3>List of Countries</h3>
-        <Search
-          onSearch={handleSearch}
-          onShowAll={() => {
-            setCountries(data.countries);
-            setGroupCriteria("all");
-            setSelectedItem(null);
-          }}
-        />
-        <select
-          onChange={(e) => setGroupCriteria(e.target.value)}
-          value={groupCriteria}
-          className="select-box"
-        >
-          <option value="all">All</option>
-          <option value="continent">Continent</option>
-          <option value="currency">Currency</option>
-        </select>
+        <div className="top-body">
+          <Search
+            onSearch={handleSearch}
+            onShowAll={() => {
+              setCountries(data.countries);
+              setGroupCriteria("all");
+              setSelectedItem(null);
+            }}
+          />
+          <select
+            onChange={(e) => setGroupCriteria(e.target.value)}
+            value={groupCriteria}
+            className="select-box"
+          >
+            <option value="all">All</option>
+            <option value="continent">Continent</option>
+            <option value="currency">Currency</option>
+          </select>
+        </div>
       </div>
-      <div className="bottom-side scroll-content ">
-        {groupCriteria !== "all"
-          ? Object.entries(groupedCountries).map(([key, countries]) => (
-              <div key={key} className="country">
-                <h4>{key}</h4>
-                <ul>
-                  {countries.map((country) => (
-                    <li
-                      key={country.code}
-                      onClick={() => {
-                        randomColors();
-                        setSelectedItem((prevSelectedItem) =>
-                          prevSelectedItem &&
-                          prevSelectedItem.code === country.code
-                            ? null
-                            : country,
-                        );
-                      }}
-                      style={{
-                        backgroundColor:
-                          selectedItem?.code === country.code
-                            ? currentSelectedColor
-                            : undefined,
-                      }}
-                    >
-                      <img
-                        width={20}
-                        height={20}
-                        src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${country.code}.png`}
-                        alt={country.code}
-                      />
-                      {country.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          : countries?.map((country) => (
-              <li
-                key={country.code}
-                onClick={() => {
-                  randomColors();
-                  setSelectedItem((prevSelectedItem) =>
-                    prevSelectedItem && prevSelectedItem.code === country.code
-                      ? null
-                      : country,
-                  );
-                }}
-                style={{
-                  backgroundColor:
-                    selectedItem?.code === country.code
-                      ? currentSelectedColor
-                      : undefined,
-                }}
-              >
-                <img
-                  width={20}
-                  height={20}
-                  src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${country.code}.png`}
-                  alt={country.code}
-                />
-                {country.name}
-              </li>
-            ))}
+      <div className="bottom-side">
+        <div className="scroll-content">
+          {groupCriteria !== "all"
+            ? Object.entries(groupedCountries).map(([key, countries]) => (
+                <div key={key} className="country">
+                  <h4>{key}</h4>
+                  <ul>
+                    {countries.map((country) => (
+                      <li
+                        key={country.code}
+                        onClick={() => {
+                          randomColors();
+                          setSelectedItem((prevSelectedItem) =>
+                            prevSelectedItem &&
+                            prevSelectedItem.code === country.code
+                              ? null
+                              : country,
+                          );
+                        }}
+                        style={{
+                          backgroundColor:
+                            selectedItem?.code === country.code
+                              ? currentSelectedColor
+                              : undefined,
+                        }}
+                      >
+                        <img
+                          width={20}
+                          height={20}
+                          src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${country.code}.png`}
+                          alt={country.code}
+                        />
+                        {country.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            : countries?.map((country) => (
+                <li
+                  key={country.code}
+                  onClick={() => {
+                    randomColors();
+                    setSelectedItem((prevSelectedItem) =>
+                      prevSelectedItem && prevSelectedItem.code === country.code
+                        ? null
+                        : country,
+                    );
+                  }}
+                  style={{
+                    backgroundColor:
+                      selectedItem?.code === country.code
+                        ? currentSelectedColor
+                        : undefined,
+                  }}
+                >
+                  <img
+                    width={20}
+                    height={20}
+                    src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${country.code}.png`}
+                    alt={country.code}
+                  />
+                  {country.name}
+                </li>
+              ))}
+        </div>
       </div>
     </div>
   );
