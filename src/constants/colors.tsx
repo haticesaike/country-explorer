@@ -1,14 +1,14 @@
 const palette: any = {
   bgColor: "#d8e5e7",
-  selectColor1: "#a2cbcb",
-  selectColor2: "#1e508a",
-  selectColor3: "#984869",
-  selectColor4: "#b77a5f",
-  selectColor5: "#7c8638",
-  selectColor6: "#7e6161",
-  selectColor7: "#9def94",
-  selectColor8: "#e3b5e8",
-  selectColor9: "#68a288",
+  selectColor1: "#606C5D",
+  selectColor2: "#7C9D96",
+  selectColor3: "#96B6C5",
+  selectColor4: "#4b527c",
+  selectColor5: "#607274",
+  selectColor6: "#7D6E83",
+  selectColor7: "rgba(140,63,95,0.72)",
+  selectColor8: "#8B7E74",
+  selectColor9: "#9BB8CD",
 };
 export const selectedColors = [
   palette.selectColor1,

@@ -90,6 +90,7 @@ function CountriesList() {
     <div>
       <div className="top-side">
         <h3>List of Countries</h3>
+
         <div className="top-body">
           <Search
             onSearch={handleSearch}
@@ -98,16 +99,9 @@ function CountriesList() {
               setGroupCriteria("all");
               setSelectedItem(null);
             }}
+            groupCriteria={groupCriteria}
+            setGroupCriteria={setGroupCriteria}
           />
-          <select
-            onChange={(e) => setGroupCriteria(e.target.value)}
-            value={groupCriteria}
-            className="select-box"
-          >
-            <option value="all">All</option>
-            <option value="continent">Continent</option>
-            <option value="currency">Currency</option>
-          </select>
         </div>
       </div>
       <div className="bottom-side">
@@ -130,6 +124,10 @@ function CountriesList() {
                           );
                         }}
                         style={{
+                          color:
+                            selectedItem?.code === country.code
+                              ? "white"
+                              : undefined,
                           backgroundColor:
                             selectedItem?.code === country.code
                               ? currentSelectedColor
@@ -142,6 +140,7 @@ function CountriesList() {
                           src={`https://raw.githubusercontent.com/onramper/small-open-datasets/master/rendered-country-flags/flags/${country.code}.png`}
                           alt={country.code}
                         />
+
                         {country.name}
                       </li>
                     ))}
@@ -160,6 +159,8 @@ function CountriesList() {
                     );
                   }}
                   style={{
+                    color:
+                      selectedItem?.code === country.code ? "white" : undefined,
                     backgroundColor:
                       selectedItem?.code === country.code
                         ? currentSelectedColor

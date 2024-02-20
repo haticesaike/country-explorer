@@ -1,6 +1,70 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+}
+.search-box {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    height: 22px;
+}
+.search-box:focus {
+    outline: var(--light-grayish) solid 2px;
+}
+input {
+    font-weight: bold;
+    color: var(--text-color);
+}
+input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: var(--text-color);
+}
 .select-box {
     margin: 10px 0;
-    padding: 5px 10px;
-    border: 3px solid var(--border);
-    border-radius: 3px;
+    padding: 10px 50px 10px 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+    height: 45px;
+}
+.select-box:focus {
+    outline: var(--light-grayish) solid 2px;
+}
+.select-box option {
+    color: var(--text-color);
+}
+
+.button {
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: var(--light-grayish);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Pathway Extreme", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    width: 150px;
+    height: 45px;
+    margin-top: 20px;
+}
+.button:hover {
+    color: var(--dark-green);
+    background: var(--light-green);}
+
+.button:active {
+    transform: translate(0.1em, 0.1em);
+}
+.text{
+    font-weight: bold;
+    color: var(--text-color);
+    font-family: "Pathway Extreme", sans-serif;
+
 }

@@ -5,7 +5,7 @@ import SelectItem from "./components/SelectItem";
 function App() {
   return (
     <div className="App">
-      <h2 className="title">Countries Explorer</h2>
+      <p className="title">Countries Explorer</p>
       <div className="container">
         <div className="countriesList">
           <CountriesList />

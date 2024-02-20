@@ -1,19 +1,22 @@
 .scroll-content{
-    max-height: 65vh;
+    height: 53vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
+    left: 35px;
 }
 .scroll-content::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
     border-radius: 10px;
 }
 .scroll-content::-webkit-scrollbar-track {
-    background: var(--bg-countries-color);
+    background: var(--bg-scrollbar-color);
     border-radius: 10px;
 }
 .scroll-content::-webkit-scrollbar-thumb {
-    background: var(--bg-select-color);
+    background: var(--light-green);
     border-radius: 10px;
+    height: 100px;
 }
 .country {
     margin-bottom: 20px;
@@ -22,9 +25,16 @@ ul {
     margin: 0;
     padding: 0;
 }
+h3{
+    color: var(--text-color);
+    padding-left: 12px;
+    font-family: "Pathway Extreme", sans-serif;
+    padding-top: 0;
+    margin-top: 0;
+}
 h4 {
     text-transform: uppercase;
-
+    color: var(--dark-green)
 }
 li {
     display: flex;
@@ -33,7 +43,9 @@ li {
     margin-right: 10px;
     font-weight: bold;
     border-bottom: 1px solid var(--border-bottom-color);
-
+    border-radius: 5px;
+    font-family: "Pathway Extreme", sans-serif;
+    color: var(--text-color);
 }
 
 li:hover {
@@ -47,19 +59,17 @@ li img {
 .top-side {
     padding: 20px 20px  20px 5px;
     border-radius: 10px;
-    background-color: #cc9be5;
-
+    background-color: var(--light-green);
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
 }
 .bottom-side {
     padding: 20px 20px  20px 5px;
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #9375a2;
-
+    background-color: var(--light-green);
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    min-height: 360px;
 }
 .top-body{
     display: flex;
     }
-
-.select-box {
-}

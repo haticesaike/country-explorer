@@ -6,9 +6,11 @@ import "../css/search.css";
 interface ISearch {
   onSearch: (term: string, criteria: keyof ICountries) => void;
   onShowAll: () => void;
+  groupCriteria: string;
+  setGroupCriteria: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Search({ onSearch, onShowAll }: ISearch) {
+function Search({ onSearch, onShowAll, setGroupCriteria }: ISearch) {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [searchCriteria, setSearchCriteria] = useState<string>("name");
 
@@ -24,9 +26,10 @@ function Search({ onSearch, onShowAll }: ISearch) {
     debouncedSearch(e.target.value, searchCriteria);
   };
 
-  const handleCriteriaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSearchCriteria(e.target.value);
-    debouncedSearch(searchTerm, e.target.value);
+  const handleCriteriaChange = (value: string) => {
+    console.log(value);
+    setSearchCriteria(value);
+    debouncedSearch(searchTerm, value);
   };
 
   const handleShowAll = () => {
@@ -36,24 +39,49 @@ function Search({ onSearch, onShowAll }: ISearch) {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search ..."
-        value={searchTerm}
-        onChange={handleSearchTermChange}
-      />
-      <select
-        value={searchCriteria}
-        onChange={handleCriteriaChange}
-        className="select-box"
-      >
-        <option value="name">Name</option>
-        <option value="capital">Capital</option>
-        <option value="currency">Currency</option>
-        <option value="continent">Continent</option>
-      </select>
-      <button onClick={handleShowAll}>Show All</button>
+    <div className="search-container">
+      <div>
+        <div className="text">Search by</div>
+
+        <input
+          type="text"
+          placeholder="Search "
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+          className="search-box"
+        />
+      </div>
+      <div>
+        <div className="text">Filter by</div>
+
+        <select
+          value={searchCriteria}
+          onChange={(e) => handleCriteriaChange(e.target.value)}
+          className="select-box"
+        >
+          <option value="name">Name</option>
+          <option value="capital">Capital</option>
+          <option value="currency">Currency</option>
+          <option value="continent">Continent</option>
+        </select>
+      </div>
+
+      <div>
+        <div className="text">Group by</div>
+        <select
+          onChange={(e) => setGroupCriteria(e.target.value)}
+          className="select-box"
+        >
+          <option value="all">All</option>
+          <option value="continent">Continent</option>
+          <option value="currency">Currency</option>
+        </select>
+      </div>
+      <div>
+        <button className="button" onClick={handleShowAll}>
+          Show All
+        </button>
+      </div>
     </div>
   );
 }

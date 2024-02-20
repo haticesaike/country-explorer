@@ -1,12 +1,13 @@
 :root{
-    --bg-countries-color: #d8e5e7;
-    --text-color: #010909;
-    --bg-select-color: #a2cbcb;
+    --bg-app-color: rgb(253, 251, 251);
+    --bg-scrollbar-color: #ebeceb;
     --bg-hover-color: #f0f0f0;
     --border: #ddd;
     --border-bottom-color: #b4b3b3;
-    --bg-color: rgb(253, 251, 251);
-
+    --light-grayish:#b5beb3;
+    --dark-green: #435334;
+    --light-green:#CCD3CA;
+    --text-color: #607274;
 }
 body{
     margin: 0;
