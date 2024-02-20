@@ -1,30 +1,59 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Country Explorer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is built using React and Vite and is designed to display, filter, and group country information through GraphQL. It utilizes Apollo Client for `@apollo/client`, jotai for global state management, and lodash for utility functions. It is developed in TypeScript.
 
-## Expanding the ESLint configuration
+## Screenshot
+![App Screenshot](https://github.com/haticesaike/country-explorer/blob/main/src/assets/country-explorer.png?raw=true)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+This section explains how to run the project on your local development environment.
+
+### Prerequisites
+
+Before running the project, ensure you have Node.js and npm (Node Package Manager) installed on your machine. For more information on installing Node.js and npm, visit the [Node.js website](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/haticesaike/country-explorer.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Navigate to the project directory:
+```bash
+cd country-explorer
+```
+
+3. Install the required npm packages:
+```bash
+npm install
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+After these steps, project should be running on `localhost:3000` (or another port specified by Vite).
+
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [GraphQL](https://graphql.org/)
+- [@apollo/client](https://www.apollographql.com/docs/react/)
+- [jotai](https://jotai.pmnd.rs/)
+- [lodash](https://lodash.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Features
+
+- Fetch country information through GraphQL queries
+- Display country information in the interface
+- Filter countries by name, population, etc.
+- Group countries by characteristics such as continent or currency
+
